@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { HousingLocation } from '../housing-location';
 
 @Component({
@@ -7,6 +7,7 @@ import { HousingLocation } from '../housing-location';
   styleUrls: ['./housing-list.component.css'],
 })
 export class HousingListComponent implements OnInit {
+  @Output() locationSelectedEvent = new EventEmitter<HousingLocation>();
   @Input() locationList: HousingLocation[] = [];
   results: HousingLocation[] = [];
   constructor() {}
