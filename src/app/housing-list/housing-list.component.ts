@@ -21,4 +21,8 @@ export class HousingListComponent implements OnInit {
       location.city.toLowerCase().includes(searchText.toLowerCase())
     );
   }
+
+  selectHousingLocation(location: HousingLocation) {
+    this.locationSelectedEvent.emit(location);
+  }
 }
